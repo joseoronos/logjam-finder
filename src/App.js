@@ -32,8 +32,8 @@ function App() {
   return (
     <div className="App max-w-screen-sm p-8 rounded-2xl">
       <div className="top flex justify-between items-center">
-        <h1 className='font-bold text-2xl text-center'>Hospital Logjam Finder</h1>
-        <p>Is your local hospital in logjam?</p>
+        <h1 className='font-bold text-2xl text-left'>Hospital Logjam Finder</h1>
+        <p className='text-right'>Is your local hospital in logjam?</p>
       </div>
       <form className="search">
         <input type="text" className='p-3 border-2 rounded-lg w-full mb-4 mt-4' value={query} onChange={onSearch} placeholder="Postcode/ Hospital Name" />

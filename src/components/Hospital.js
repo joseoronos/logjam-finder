@@ -3,19 +3,22 @@ import Modal from 'react-modal/lib/components/Modal';
 
 const Hospital = (props) => {
   const faces = {
-    "ed Resuscitation Traffic": props.edResuscitationTraffic,
-    "ed Emergency Traffic": props.edEmergencyTraffic,
-    "ed Urgent Traffic": props.edUrgentTraffic,
-    "ed Semi Urgent Traffic": props.edSemiUrgentTraffic,
-    "ed NonUrgent Traffic": props.edNonUrgentTraffic,
-    "urgent Elective Traffic": props.urgentElectiveTraffic,
-    "semi Urgent Elective Traffic": props.semiUrgentElectiveTraffic,
-    "non Urgent Elective Surgery Traffic": props.nonUrgentElectiveSurgeryTraffic,
+    "ed Resuscitation": props.edResuscitationTraffic,
+    "ed Emergency": props.edEmergencyTraffic,
+    "ed Urgent": props.edUrgentTraffic,
+    "ed Semi-Urgent": props.edSemiUrgentTraffic,
+    "ed Non-Urgent": props.edNonUrgentTraffic,
+    "es Urgent ": props.urgentElectiveTraffic,
+    "es Semi-Urgent": props.semiUrgentElectiveTraffic,
+    "es Non-Urgent": props.nonUrgentElectiveSurgeryTraffic,
   };
 
-  const redFaces = [];
-  const amberFaces = [];
-  const greenFaces = [];
+  // const redFaces = [];
+  // const amberFaces = [];
+  // const greenFaces = [];
+
+  const electiveSurgery = [];
+  const emergencyDepartment = [];
 
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const customStyles = {
@@ -23,12 +26,12 @@ const Hospital = (props) => {
       backgroundColor: 'rgba(0, 0, 0, 0.75)'
     },
     content: {
-      top: '50%',
-      left: '50%',
-      right: 'auto',
-      bottom: 'auto',
-      // marginRight: '-50%',
-      transform: 'translate(-50%, -50%)',
+      // top: '50%',
+      // left: '50%',
+      // right: 'auto',
+      // bottom: 'auto',
+      // // marginRight: '-50%',
+      // transform: 'translate(-50%, -50%)',
       borderRadius: '24px',
       border: '0px',
       WebkitOverflowScrolling: 'touch',
@@ -37,41 +40,89 @@ const Hospital = (props) => {
 
   Modal.setAppElement('#root')
 
-  for (const [key, value] of Object.entries(faces)) {
+  // for (const [key, value] of Object.entries(faces)) {
+  //   if (value == "Red") {
+  //     redFaces.push(<div className='flex'><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  //       <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" fill="#E53935" stroke="#212121" stroke-width="2" stroke-linecap="round" />
+  //       <path d="M8 9.05V8.95" stroke="#212121" stroke-width="2" stroke-linecap="round" />
+  //       <path d="M16 9.05V8.95" stroke="#212121" stroke-width="2" stroke-linecap="round" />
+  //       <path d="M16 16C15.5 14.5 14.21 13 12 13C9.79 13 8.5 14.5 8 16" stroke="#212121" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+  //     </svg>&nbsp;{key}
+  //     </div>)
+  //   } else if (value == "Amber") {
+  //     amberFaces.push(<div className='flex'><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  //       <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" fill="#FDD835" stroke="#212121" stroke-width="2" stroke-linecap="round" />
+  //       <path d="M8 9.05V8.95" stroke="#212121" stroke-width="2" stroke-linecap="round" />
+  //       <path d="M16 9.05V8.95" stroke="#212121" stroke-width="2" stroke-linecap="round" />
+  //       <path d="M8 14H16" stroke="#212121" stroke-width="2" stroke-linecap="round" />
+  //     </svg>&nbsp;{key}</div>)
+  //   } else {
+  //     greenFaces.push(<div className='flex'><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  //       <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" fill="#43A047" stroke="#212121" stroke-width="2" stroke-linecap="round" />
+  //       <path d="M8 9.05V8.95" stroke="#212121" stroke-width="2" stroke-linecap="round" />
+  //       <path d="M16 9.05V8.95" stroke="#212121" stroke-width="2" stroke-linecap="round" />
+  //       <path d="M16 14C15.5 15.5 14.21 17 12 17C9.79 17 8.5 15.5 8 14" stroke="#212121" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+  //     </svg>&nbsp;{key}
+  //     </div>)
+  //   }
+  // }
+
+  function checkFace(value) {
     if (value == "Red") {
-      redFaces.push(<div className='flex'><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      return <svg class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" fill="#E53935" stroke="#212121" stroke-width="2" stroke-linecap="round" />
         <path d="M8 9.05V8.95" stroke="#212121" stroke-width="2" stroke-linecap="round" />
         <path d="M16 9.05V8.95" stroke="#212121" stroke-width="2" stroke-linecap="round" />
         <path d="M16 16C15.5 14.5 14.21 13 12 13C9.79 13 8.5 14.5 8 16" stroke="#212121" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-      </svg>&nbsp;{key}
-      </div>)
+      </svg>
     } else if (value == "Amber") {
-      amberFaces.push(<div className='flex'><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      return <svg class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" fill="#FDD835" stroke="#212121" stroke-width="2" stroke-linecap="round" />
         <path d="M8 9.05V8.95" stroke="#212121" stroke-width="2" stroke-linecap="round" />
         <path d="M16 9.05V8.95" stroke="#212121" stroke-width="2" stroke-linecap="round" />
         <path d="M8 14H16" stroke="#212121" stroke-width="2" stroke-linecap="round" />
-      </svg>&nbsp;{key}</div>)
+      </svg>
     } else {
-      greenFaces.push(<div className='flex'><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      return <svg class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" fill="#43A047" stroke="#212121" stroke-width="2" stroke-linecap="round" />
         <path d="M8 9.05V8.95" stroke="#212121" stroke-width="2" stroke-linecap="round" />
         <path d="M16 9.05V8.95" stroke="#212121" stroke-width="2" stroke-linecap="round" />
         <path d="M16 14C15.5 15.5 14.21 17 12 17C9.79 17 8.5 15.5 8 14" stroke="#212121" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-      </svg>&nbsp;{key}
-      </div>)
+      </svg>
     }
   }
 
+
+  for (const [key, value] of Object.entries(faces)) {
+    if (key.substring(0, 2).includes("es")) {
+      electiveSurgery.push(<div className='flex'>{checkFace(value)} {key.slice(2)}</div>)
+      // electiveSurgery.push(<div className='flex'>{key} {value}</div>)
+    } else {
+      emergencyDepartment.push(<div className='flex'>{checkFace(value)} {key.slice(2)}</div>)
+      // emergencyDepartment.push(<div className='flex'>{key} {value}</div>)
+    }
+  }
+
+  console.log("es", electiveSurgery)
+  console.log("ed", emergencyDepartment)
+
   return (
-    <div className='card p-4 rounded-2xl mb-4 flex-col'>
-      <h2 className='text-xl font-bold'>{props.name}</h2>
-      <p>{props.postcode}</p>
-      <div className='flex flex-col space-y-2 py-3'>
-        <p>{redFaces}</p>
-        <p>{amberFaces}</p>
-        <p>{greenFaces}</p>
+    <div className='card p-4 rounded-2xl mb-4 flex-col space-y-3'>
+      <div className='flex justify-between'>
+        <h2 className='text-xl font-bold'>{props.name}</h2>
+        <p>{props.postcode}</p>
+      </div>
+
+      <div className='flex flex-row'>
+        <div className='grow space-y-2'>
+          <h3 className='font-medium'>Elective Surgery</h3>
+          <div className='flex flex-col space-y-2'>{electiveSurgery}</div>
+        </div>
+        <div className='grow space-y-2'>
+          <h3 className='font-medium'>Emergency Department</h3>
+          <div className='flex flex-col space-y-2'>{emergencyDepartment}</div>
+        </div>
+
       </div>
       <button onClick={() => setModalIsOpen(true)}>What do these mean?</button>
       <Modal
