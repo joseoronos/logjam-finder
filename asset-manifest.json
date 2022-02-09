@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/logjam-finder/static/css/main.704372df.css",
-    "main.js": "/logjam-finder/static/js/main.69f73b66.js",
+    "main.css": "/logjam-finder/static/css/main.83a15926.css",
+    "main.js": "/logjam-finder/static/js/main.9b771730.js",
     "static/js/787.226f4826.chunk.js": "/logjam-finder/static/js/787.226f4826.chunk.js",
     "index.html": "/logjam-finder/index.html",
-    "main.704372df.css.map": "/logjam-finder/static/css/main.704372df.css.map",
-    "main.69f73b66.js.map": "/logjam-finder/static/js/main.69f73b66.js.map",
+    "main.83a15926.css.map": "/logjam-finder/static/css/main.83a15926.css.map",
+    "main.9b771730.js.map": "/logjam-finder/static/js/main.9b771730.js.map",
     "787.226f4826.chunk.js.map": "/logjam-finder/static/js/787.226f4826.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.704372df.css",
-    "static/js/main.69f73b66.js"
+    "static/css/main.83a15926.css",
+    "static/js/main.9b771730.js"
   ]
 }
