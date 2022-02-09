@@ -22,8 +22,6 @@ function App() {
   const results = fuse.search(query);
   const hospitalResults = query ? results.map(hospital => hospital.item) : hospitals;
 
-  console.log('results', results);
-
   function onSearch({ currentTarget }) {
     updateQuery(currentTarget.value);
   }
