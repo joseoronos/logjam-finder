@@ -34,7 +34,7 @@ function App() {
         <p className='text-right text-xs text-left sm:text-base'>Is your local hospital in logjam?</p>
       </div>
       <form className="search">
-        <input type="text" className='p-3 border-2 rounded-lg w-full mb-4 mt-4 text-sm sm:text-base' value={query} onChange={onSearch} placeholder="Postcode/ Hospital Name" />
+        <input type="search" className='p-3 border-2 rounded-lg w-full mb-4 mt-4 text-sm sm:text-base' value={query} onChange={onSearch} placeholder="Postcode/ Hospital Name" />
       </form>
       <div className='resultContainer'>
         {hospitalResults.map(hospital => {
