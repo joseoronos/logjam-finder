@@ -28,7 +28,7 @@ function App() {
 
 
   return (
-    <div className="App max-w-screen-sm p-8 rounded-2xl">
+    <div className="App max-w-screen-sm p-4 sm:p-8 rounded-2xl">
       <div className="top flex justify-between items-center">
         <h1 className='font-bold text-lg text-left sm:text-2xl'>Hospital Logjam Finder</h1>
         <p className='text-right text-xs text-left sm:text-base'>Is your local hospital in logjam?</p>

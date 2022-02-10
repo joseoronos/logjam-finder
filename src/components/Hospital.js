@@ -105,10 +105,10 @@ const Hospital = (props) => {
         </svg>
           Close</button></div>
           <br />
-        <h3 className='font-semibold text-2xl text-center mt-2'>Hospital logjam – what does it mean for you – the patient? </h3>
+        <h3 className='font-semibold  text-center mt-2 text-lg sm:text-2xl'>Hospital logjam – what does it mean for you – the patient? </h3>
         <br />
-        <p>When a patient presents at an emergency department, there are five triage categories for treatment (<a className='text-blue-700' href="https://www.aihw.gov.au/reports/hospitals/emergency-dept-care-2017-18/contents/glossary">source</a>)</p>
-        <ul className='list-disc ml-5'>
+        <p className='text-sm sm:text-base'>When a patient presents at an emergency department, there are five triage categories for treatment (<a className='text-blue-700' href="https://www.aihw.gov.au/reports/hospitals/emergency-dept-care-2017-18/contents/glossary">source</a>)</p>
+        <ul className='list-disc ml-5 text-sm sm:text-base'>
           <li>Resuscitation (triage category 1) is the most urgent category. It is for conditions that are immediately life threatening-such as heart attack, severe burns or injuries resulting from a motor vehicle accident. Patients in this category should be seen within 2 minutes of presenting to the emergency department. </li>
           <li>Emergency (triage category 2) is for conditions that could be life threatening and require prompt attention such as chest pain or possible stroke. Patients in this category should be seen within 10 minutes of presenting to the emergency department.
           </li>
@@ -120,11 +120,11 @@ const Hospital = (props) => {
           </li>
         </ul>
         <br />
-        <p>Elective surgery is planned surgery that can be booked in advance as a result of a specialist clinical assessment and the patient being placed on a waiting list. (<a class="text-blue-700" href="https://www.aihw.gov.au/reports-data/myhospitals/sectors/elective-surgery">source</a>).</p>
+        <p className='text-sm sm:text-base'>Elective surgery is planned surgery that can be booked in advance as a result of a specialist clinical assessment and the patient being placed on a waiting list. (<a class="text-blue-700" href="https://www.aihw.gov.au/reports-data/myhospitals/sectors/elective-surgery">source</a>).</p>
 
-        <p>There are three elective surgery clinical urgency categories:</p>
+        <p className='text-sm sm:text-base'>There are three elective surgery clinical urgency categories:</p>
 
-        <ul className='list-disc ml-5'>
+        <ul className='list-disc ml-5 text-sm sm:text-base'>
           <li>Category 1 – procedures that are clinically indicated within 30 days; (examples include: limb amputation, biopsies, removal of malignant skin cancers, removal of kidney stones)
           </li>
           <li>Category 2 – clinically indicated within 90 days; (examples include: removal of ovarian cysts, treatment of a brain aneurysm, nerve decompression of the spinal cord, treatment of an unhealed fracture, heart valve replacement)
@@ -133,8 +133,8 @@ const Hospital = (props) => {
           </li>
         </ul>
         <br />
-        <p>There are also outpatient interactions with the public hospital system, where a patient is referred, most commonly by their GP, to see a specialist for a particular health issue. The outpatient urgency categories are classified as follows (<a class="text-blue-700" href="https://www.qld.gov.au/health/services/hospital-care/waiting-list">source</a>)</p>
-        <ul className='list-disc ml-5'>
+        <p className='text-sm sm:text-base'>There are also outpatient interactions with the public hospital system, where a patient is referred, most commonly by their GP, to see a specialist for a particular health issue. The outpatient urgency categories are classified as follows (<a class="text-blue-700" href="https://www.qld.gov.au/health/services/hospital-care/waiting-list">source</a>)</p>
+        <ul className='list-disc ml-5 text-sm sm:text-base'>
           <li>Urgent (Category 1) – specialist consultation recommended within 30 days of being added to the outpatient wait list
           </li>
           <li>Semi-urgent (Category 2) – specialist consultation recommended within 90 days of being added to the outpatient wait list
